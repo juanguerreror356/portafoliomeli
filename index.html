@@ -1,0 +1,1108 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Juan Sebastián Guerrero | Portafolio de Innovación</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <style>
+        :root {
+            --meli-yellow: #FFE600;
+            --meli-yellow-light: #FFF9E6;
+            --meli-blue: #3483FA;
+            --meli-blue-dark: #2968C8;
+            --meli-blue-light: #E8F4FD;
+            --dark: #1a1a2e;
+            --dark-light: #16213e;
+            --text: #333333;
+            --text-light: #666666;
+            --text-muted: #999999;
+            --white: #ffffff;
+            --gray-light: #f5f5f5;
+            --gray: #e0e0e0;
+            --success: #00a650;
+            --gradient-hero: linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #0f3460 100%);
+            --gradient-accent: linear-gradient(135deg, var(--meli-yellow) 0%, #FFD000 100%);
+            --shadow-sm: 0 2px 8px rgba(0,0,0,0.08);
+            --shadow-md: 0 4px 20px rgba(0,0,0,0.12);
+            --shadow-lg: 0 8px 40px rgba(0,0,0,0.16);
+            --shadow-xl: 0 16px 60px rgba(0,0,0,0.2);
+            --radius-sm: 8px;
+            --radius-md: 12px;
+            --radius-lg: 20px;
+            --radius-xl: 32px;
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        html { scroll-behavior: smooth; }
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            background: var(--white);
+            color: var(--text);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        /* ============ HERO ============ */
+        .hero {
+            min-height: 100vh;
+            background: var(--gradient-hero);
+            position: relative;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0; left: 0; right: 0; bottom: 0;
+            background-image: 
+                radial-gradient(2px 2px at 20px 30px, rgba(255,230,0,0.3), transparent),
+                radial-gradient(2px 2px at 40px 70px, rgba(52,131,250,0.3), transparent),
+                radial-gradient(1px 1px at 90px 40px, rgba(255,255,255,0.3), transparent),
+                radial-gradient(2px 2px at 130px 80px, rgba(255,230,0,0.2), transparent);
+            background-size: 200px 150px;
+            animation: starsMove 60s linear infinite;
+            opacity: 0.6;
+        }
+
+        @keyframes starsMove {
+            from { transform: translateY(0); }
+            to { transform: translateY(-150px); }
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 2;
+            text-align: center;
+            padding: 2rem;
+            max-width: 900px;
+        }
+
+        .hero-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            background: rgba(255,230,0,0.15);
+            border: 1px solid rgba(255,230,0,0.3);
+            padding: 8px 20px;
+            border-radius: 50px;
+            font-size: 0.85rem;
+            font-weight: 600;
+            color: var(--meli-yellow);
+            margin-bottom: 1.5rem;
+            animation: fadeInDown 0.8s ease;
+        }
+
+        @keyframes fadeInDown {
+            from { opacity: 0; transform: translateY(-20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .hero-title {
+            font-size: clamp(2.5rem, 6vw, 4rem);
+            font-weight: 900;
+            color: var(--white);
+            margin-bottom: 1rem;
+            animation: fadeInUp 0.8s ease 0.2s both;
+            line-height: 1.1;
+        }
+
+        .hero-title span {
+            background: var(--gradient-accent);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        @keyframes fadeInUp {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .hero-subtitle {
+            font-size: clamp(1rem, 2.5vw, 1.25rem);
+            color: rgba(255,255,255,0.8);
+            margin-bottom: 1.5rem;
+            font-weight: 500;
+            animation: fadeInUp 0.8s ease 0.4s both;
+            max-width: 700px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .hero-quote {
+            font-size: 1.1rem;
+            color: rgba(255,255,255,0.6);
+            font-style: italic;
+            margin-bottom: 2.5rem;
+            animation: fadeInUp 0.8s ease 0.5s both;
+            padding: 0 1rem;
+        }
+
+        .hero-stats {
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+            flex-wrap: wrap;
+            margin-bottom: 2.5rem;
+            animation: fadeInUp 0.8s ease 0.6s both;
+        }
+
+        .stat-badge {
+            background: rgba(255,255,255,0.1);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255,255,255,0.15);
+            padding: 12px 24px;
+            border-radius: var(--radius-md);
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            transition: all 0.3s ease;
+        }
+
+        .stat-badge:hover {
+            background: rgba(255,255,255,0.15);
+            transform: translateY(-3px);
+        }
+
+        .stat-badge i { color: var(--meli-yellow); font-size: 1.1rem; }
+        .stat-badge span { color: var(--white); font-weight: 600; font-size: 0.9rem; }
+
+        .hero-cta {
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+            flex-wrap: wrap;
+            animation: fadeInUp 0.8s ease 0.8s both;
+        }
+
+        .btn {
+            padding: 14px 32px;
+            border-radius: 50px;
+            font-weight: 700;
+            font-size: 1rem;
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            transition: all 0.3s ease;
+            cursor: pointer;
+            border: none;
+        }
+
+        .btn-primary {
+            background: var(--gradient-accent);
+            color: var(--dark);
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 30px rgba(255,230,0,0.3);
+        }
+
+        .btn-secondary {
+            background: transparent;
+            color: var(--white);
+            border: 2px solid rgba(255,255,255,0.3);
+        }
+
+        .btn-secondary:hover {
+            background: rgba(255,255,255,0.1);
+            border-color: rgba(255,255,255,0.5);
+            transform: translateY(-3px);
+        }
+
+        .scroll-indicator {
+            position: absolute;
+            bottom: 2rem;
+            left: 50%;
+            transform: translateX(-50%);
+            animation: bounce 2s infinite;
+        }
+
+        .scroll-indicator i { color: rgba(255,255,255,0.5); font-size: 1.5rem; }
+
+        @keyframes bounce {
+            0%, 20%, 50%, 80%, 100% { transform: translateX(-50%) translateY(0); }
+            40% { transform: translateX(-50%) translateY(-10px); }
+            60% { transform: translateX(-50%) translateY(-5px); }
+        }
+
+        /* ============ SECCIONES GENERALES ============ */
+        .section { padding: 100px 0; }
+        .container { max-width: 1200px; margin: 0 auto; padding: 0 2rem; }
+
+        .section-header { text-align: center; margin-bottom: 4rem; }
+
+        .section-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            background: var(--meli-blue-light);
+            color: var(--meli-blue);
+            padding: 8px 20px;
+            border-radius: 50px;
+            font-size: 0.85rem;
+            font-weight: 600;
+            margin-bottom: 1rem;
+        }
+
+        .section-title {
+            font-size: clamp(2rem, 5vw, 3rem);
+            font-weight: 900;
+            color: var(--dark);
+            margin-bottom: 1rem;
+        }
+
+        .section-title span { color: var(--meli-blue); }
+
+        .section-subtitle {
+            font-size: 1.1rem;
+            color: var(--text-light);
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        /* ============ SOBRE MÍ ============ */
+        .sobre-mi { background: var(--gray-light); }
+
+        .sobre-mi-content {
+            display: grid;
+            grid-template-columns: 1.2fr 0.8fr;
+            gap: 4rem;
+            align-items: center;
+        }
+
+        .sobre-mi-text p {
+            font-size: 1.1rem;
+            color: var(--text);
+            margin-bottom: 1.5rem;
+            line-height: 1.8;
+        }
+
+        .sobre-mi-text strong { color: var(--meli-blue); }
+        .sobre-mi-text em { color: var(--meli-blue-dark); font-style: normal; font-weight: 600; }
+
+        .principios-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.75rem;
+            margin-top: 2rem;
+        }
+
+        .principio-tag {
+            background: var(--white);
+            border: 2px solid var(--meli-yellow);
+            color: var(--dark);
+            padding: 10px 20px;
+            border-radius: 50px;
+            font-size: 0.9rem;
+            font-weight: 600;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            transition: all 0.3s ease;
+        }
+
+        .principio-tag:hover { background: var(--meli-yellow); transform: translateY(-2px); }
+        .principio-tag i { color: var(--meli-blue); }
+
+        .sobre-mi-image { position: relative; }
+
+        .image-placeholder {
+            background: linear-gradient(135deg, var(--meli-blue-light), var(--gray));
+            border-radius: var(--radius-lg);
+            aspect-ratio: 4/5;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            gap: 1rem;
+            color: var(--meli-blue);
+            border: 3px dashed var(--meli-blue);
+        }
+
+        .image-placeholder i { font-size: 4rem; opacity: 0.5; }
+        .image-placeholder span { font-weight: 600; opacity: 0.7; }
+
+        /* ============ PROYECTOS ============ */
+        .proyectos { background: var(--white); }
+        .proyectos-grid { display: flex; flex-direction: column; gap: 3rem; }
+
+        .proyecto-card {
+            background: var(--white);
+            border-radius: var(--radius-lg);
+            border: 1px solid var(--gray);
+            overflow: hidden;
+            transition: all 0.4s ease;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+        }
+
+        .proyecto-card:nth-child(even) { direction: rtl; }
+        .proyecto-card:nth-child(even) > * { direction: ltr; }
+
+        .proyecto-card:hover {
+            transform: translateY(-8px);
+            box-shadow: var(--shadow-xl);
+            border-color: var(--meli-blue);
+        }
+
+        .proyecto-image-section {
+            background: var(--gray-light);
+            padding: 2rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .proyecto-image-container {
+            width: 100%;
+            aspect-ratio: 16/10;
+            border-radius: var(--radius-md);
+            overflow: hidden;
+            box-shadow: var(--shadow-md);
+        }
+
+        .proyecto-image-container img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .proyecto-image-container .image-placeholder {
+            width: 100%;
+            height: 100%;
+            aspect-ratio: auto;
+            border: none;
+            border-radius: 0;
+        }
+
+        .proyecto-content-section { padding: 2rem; display: flex; flex-direction: column; }
+
+        .proyecto-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 1rem;
+        }
+
+        .proyecto-icon {
+            width: 50px;
+            height: 50px;
+            background: var(--gradient-accent);
+            border-radius: var(--radius-md);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .proyecto-icon i { font-size: 1.5rem; color: var(--dark); }
+
+        .proyecto-category {
+            background: var(--meli-blue-light);
+            color: var(--meli-blue);
+            padding: 6px 14px;
+            border-radius: 50px;
+            font-size: 0.75rem;
+            font-weight: 700;
+            text-transform: uppercase;
+        }
+
+        .proyecto-title {
+            font-size: 1.75rem;
+            font-weight: 800;
+            color: var(--dark);
+            margin-bottom: 0.25rem;
+        }
+
+        .proyecto-tagline {
+            color: var(--text-muted);
+            font-weight: 500;
+            margin-bottom: 1.5rem;
+        }
+
+        .proyecto-description { flex: 1; }
+
+        .proyecto-section { margin-bottom: 1.25rem; }
+        .proyecto-section:last-child { margin-bottom: 0; }
+
+        .proyecto-section h4 {
+            font-size: 0.85rem;
+            font-weight: 700;
+            color: var(--meli-blue);
+            margin-bottom: 0.5rem;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .proyecto-section p {
+            font-size: 0.95rem;
+            color: var(--text-light);
+            line-height: 1.7;
+        }
+
+        .proyecto-section strong { color: var(--dark); }
+        .proyecto-section em { color: var(--meli-blue); font-style: normal; font-weight: 500; }
+
+        .proyecto-footer {
+            padding-top: 1.5rem;
+            border-top: 1px solid var(--gray);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 1rem;
+            margin-top: auto;
+        }
+
+        .proyecto-tags { display: flex; flex-wrap: wrap; gap: 0.5rem; }
+
+        .tag {
+            background: var(--gray-light);
+            color: var(--text-light);
+            padding: 6px 12px;
+            border-radius: 50px;
+            font-size: 0.75rem;
+            font-weight: 600;
+        }
+
+        .proyecto-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            color: var(--meli-blue);
+            font-weight: 700;
+            text-decoration: none;
+            transition: all 0.3s ease;
+        }
+
+        .proyecto-link:hover { gap: 12px; color: var(--meli-blue-dark); }
+
+        /* ============ HABILIDADES ============ */
+        .habilidades { background: var(--dark); color: var(--white); }
+        .habilidades .section-title { color: var(--white); }
+        .habilidades .section-badge { background: rgba(255,230,0,0.2); color: var(--meli-yellow); }
+
+        .habilidades-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 1.5rem;
+        }
+
+        .habilidad-card {
+            background: rgba(255,255,255,0.05);
+            border: 1px solid rgba(255,255,255,0.1);
+            border-radius: var(--radius-lg);
+            padding: 2rem;
+            transition: all 0.3s ease;
+        }
+
+        .habilidad-card:hover {
+            background: rgba(255,255,255,0.08);
+            transform: translateY(-5px);
+            border-color: var(--meli-yellow);
+        }
+
+        .habilidad-icon {
+            width: 60px;
+            height: 60px;
+            background: var(--gradient-accent);
+            border-radius: var(--radius-md);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 1.25rem;
+        }
+
+        .habilidad-icon i { font-size: 1.75rem; color: var(--dark); }
+
+        .habilidad-card h3 {
+            font-size: 1.25rem;
+            font-weight: 700;
+            margin-bottom: 0.75rem;
+        }
+
+        .habilidad-card p {
+            font-size: 0.95rem;
+            color: rgba(255,255,255,0.7);
+            line-height: 1.7;
+        }
+
+        /* ============ CONTACTO ============ */
+        .contacto { background: var(--gray-light); }
+
+        .contacto-content {
+            text-align: center;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .contacto-text {
+            font-size: 1.15rem;
+            color: var(--text);
+            margin-bottom: 2rem;
+            line-height: 1.8;
+        }
+
+        .contacto-links {
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+            flex-wrap: wrap;
+        }
+
+        .contacto-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            padding: 14px 28px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s ease;
+        }
+
+        .contacto-link.linkedin {
+            background: #0077b5;
+            color: var(--white);
+        }
+
+        .contacto-link.email {
+            background: var(--meli-blue);
+            color: var(--white);
+        }
+
+        .contacto-link:hover {
+            transform: translateY(-3px);
+            box-shadow: var(--shadow-md);
+        }
+
+        /* ============ FOOTER ============ */
+        .footer {
+            background: var(--dark);
+            color: rgba(255,255,255,0.6);
+            padding: 2rem;
+            text-align: center;
+        }
+
+        .footer-text { font-size: 0.9rem; margin-bottom: 0.5rem; }
+        .footer-quote { font-style: italic; font-size: 0.85rem; color: var(--meli-yellow); }
+
+        /* ============ RESPONSIVE ============ */
+        @media (max-width: 1024px) {
+            .sobre-mi-content { grid-template-columns: 1fr; gap: 2rem; }
+            .sobre-mi-image { order: -1; max-width: 300px; margin: 0 auto; }
+            .proyecto-card { grid-template-columns: 1fr; }
+            .proyecto-card:nth-child(even) { direction: ltr; }
+            .proyecto-image-section { min-height: 300px; }
+        }
+
+        @media (max-width: 768px) {
+            .section { padding: 60px 0; }
+            .container { padding: 0 1rem; }
+            .hero-stats { gap: 0.5rem; }
+            .stat-badge { padding: 10px 16px; font-size: 0.8rem; }
+            .btn { padding: 12px 24px; font-size: 0.9rem; }
+            .sobre-mi-text p { font-size: 1rem; }
+            .principios-tags { justify-content: center; }
+            .proyecto-title { font-size: 1.4rem; }
+            .habilidades-grid { grid-template-columns: 1fr; }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- ============ HERO ============ -->
+    <section class="hero" id="inicio">
+        <div class="hero-content">
+            <div class="hero-badge">
+                <i class="fas fa-rocket"></i>
+                <span>Innovación desde la Primera Línea</span>
+            </div>
+            
+            <h1 class="hero-title">
+                Juan Sebastián<br><span>Guerrero Rodríguez</span>
+            </h1>
+            
+            <p class="hero-subtitle">
+                Representante de Atención al Cliente en MercadoLibre que detectó oportunidades de mejora y construyó soluciones que hoy impactan a más de 200 personas.
+            </p>
+            
+            <p class="hero-quote">
+                "No esperé un cargo para liderar. Identifiqué oportunidades, validé con mis compañeros, y construí herramientas que transforman datos en decisiones."
+            </p>
+            
+            <div class="hero-stats">
+                <div class="stat-badge">
+                    <i class="fas fa-building"></i>
+                    <span>2+ años en MercadoLibre</span>
+                </div>
+                <div class="stat-badge">
+                    <i class="fas fa-lightbulb"></i>
+                    <span>7 proyectos de innovación</span>
+                </div>
+                <div class="stat-badge">
+                    <i class="fas fa-users"></i>
+                    <span>200+ personas impactadas</span>
+                </div>
+                <div class="stat-badge">
+                    <i class="fas fa-puzzle-piece"></i>
+                    <span>Extensión de Chrome publicada</span>
+                </div>
+            </div>
+            
+            <div class="hero-cta">
+                <a href="#proyectos" class="btn btn-primary">
+                    <i class="fas fa-folder-open"></i>
+                    Ver Proyectos
+                </a>
+                <a href="#sobre-mi" class="btn btn-secondary">
+                    <i class="fas fa-user"></i>
+                    Conocer mi Historia
+                </a>
+            </div>
+        </div>
+        
+        <div class="scroll-indicator">
+            <i class="fas fa-chevron-down"></i>
+        </div>
+    </section>
+
+    <!-- ============ SOBRE MÍ ============ -->
+    <section class="section sobre-mi" id="sobre-mi">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-badge"><i class="fas fa-user"></i> Mi Historia</span>
+                <h2 class="section-title">El Punto de <span>Inflexión</span></h2>
+            </div>
+            
+            <div class="sobre-mi-content">
+                <div class="sobre-mi-text">
+                    <p>
+                        Después de más de dos años en MercadoLibre como representante de atención al cliente, llegó un momento donde me pregunté: <strong>¿qué más puedo aportar?</strong>
+                    </p>
+                    <p>
+                        En mi día a día empecé a detectar oportunidades de mejora que, al consultarlas con mis compañeros, confirmé que no eran solo mi percepción: eran necesidades reales dentro de la gestión. Falta de visibilidad en tiempo real, métricas que llegaban tarde, reconocimientos genéricos, equipos sin identidad clara.
+                    </p>
+                    <p>
+                        No pedí permiso ni esperé instrucciones. <strong>Aprendí lo que necesitaba aprender y construí las soluciones.</strong> Cada proyecto que verás aquí nació de escuchar, validar y actuar. Eso es lo que significa para mí vivir los principios de MercadoLibre.
+                    </p>
+                    
+                    <div class="principios-tags">
+                        <span class="principio-tag"><i class="fas fa-rocket"></i> Emprendemos</span>
+                        <span class="principio-tag"><i class="fas fa-trophy"></i> Competimos en equipo para ganar</span>
+                        <span class="principio-tag"><i class="fas fa-fire"></i> Damos el máximo</span>
+                    </div>
+                </div>
+                
+                <div class="sobre-mi-image">
+                    <!-- REEMPLAZA ESTO CON TU FOTO: <img src="tu-foto.jpg" alt="Juan Sebastián"> -->
+                    <div class="image-placeholder">
+                        <i class="fas fa-user-astronaut"></i>
+                        <span>Tu foto aquí</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============ PROYECTOS ============ -->
+    <section class="section proyectos" id="proyectos">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-badge"><i class="fas fa-folder-open"></i> Proyectos</span>
+                <h2 class="section-title">Soluciones que <span>Construí</span></h2>
+                <p class="section-subtitle">Cada proyecto nació de una oportunidad detectada en el día a día y validada con el equipo</p>
+            </div>
+            
+            <div class="proyectos-grid">
+                
+                <!-- PROYECTO 1: Case Counter Pro -->
+                <article class="proyecto-card">
+                    <div class="proyecto-image-section">
+                        <div class="proyecto-image-container">
+                            <!-- REEMPLAZA CON CAPTURA: <img src="case-counter.png" alt="Case Counter Pro"> -->
+                            <div class="image-placeholder">
+                                <i class="fas fa-image"></i>
+                                <span>Captura de la extensión</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="proyecto-content-section">
+                        <div class="proyecto-header">
+                            <div class="proyecto-icon"><i class="fas fa-puzzle-piece"></i></div>
+                            <div class="proyecto-category">Extensión de Chrome</div>
+                        </div>
+                        <h3 class="proyecto-title">Case Counter Pro</h3>
+                        <p class="proyecto-tagline">Productividad en Tiempo Real</p>
+                        <div class="proyecto-description">
+                            <div class="proyecto-section">
+                                <h4><i class="fas fa-eye"></i> La Oportunidad</h4>
+                                <p>Como representante, detecté que gestionamos decenas de casos al día sin saber cuántos llevamos ni cómo vamos respecto a nuestra meta. La información llegaba al día siguiente. Mis compañeros confirmaron que sentían lo mismo.</p>
+                            </div>
+                            <div class="proyecto-section">
+                                <h4><i class="fas fa-lightbulb"></i> La Solución</h4>
+                                <p>Una extensión de Chrome que permite registrar cada caso con un click, ver el progreso en tiempo real, y compararse con el equipo a través de un ranking que se actualiza cada segundo.</p>
+                            </div>
+                            <div class="proyecto-section">
+                                <h4><i class="fas fa-chart-line"></i> El Impacto</h4>
+                                <p><strong>200+ representantes</strong> la usan voluntariamente. Es <em>"Competimos en equipo para ganar"</em> hecho realidad todos los días.</p>
+                            </div>
+                        </div>
+                        <div class="proyecto-footer">
+                            <div class="proyecto-tags">
+                                <span class="tag">Apps Script</span>
+                                <span class="tag">Chrome Extension</span>
+                                <span class="tag">JavaScript</span>
+                            </div>
+                            <a href="#" class="proyecto-link"><span>Ver más</span><i class="fas fa-arrow-right"></i></a>
+                        </div>
+                    </div>
+                </article>
+                
+                <!-- PROYECTO 2: Dashboard de Productividad -->
+                <article class="proyecto-card">
+                    <div class="proyecto-image-section">
+                        <div class="proyecto-image-container">
+                            <!-- REEMPLAZA CON CAPTURA: <img src="dashboard-prod.png" alt="Dashboard Productividad"> -->
+                            <div class="image-placeholder">
+                                <i class="fas fa-image"></i>
+                                <span>Captura del dashboard</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="proyecto-content-section">
+                        <div class="proyecto-header">
+                            <div class="proyecto-icon"><i class="fas fa-chart-bar"></i></div>
+                            <div class="proyecto-category">Google Apps Script</div>
+                        </div>
+                        <h3 class="proyecto-title">Dashboard de Productividad</h3>
+                        <p class="proyecto-tagline">Visibilidad del Rendimiento Día a Día</p>
+                        <div class="proyecto-description">
+                            <div class="proyecto-section">
+                                <h4><i class="fas fa-eye"></i> La Oportunidad</h4>
+                                <p>Identifiqué que como representantes no teníamos visibilidad clara de nuestro rendimiento día a día. Los reportes llegaban después, sin contexto de qué días fueron buenos o malos. Al conversarlo con compañeros, confirmé que todos queríamos entender mejor nuestros números.</p>
+                            </div>
+                            <div class="proyecto-section">
+                                <h4><i class="fas fa-lightbulb"></i> La Solución</h4>
+                                <p>Un dashboard que muestra la productividad día a día, identifica patrones por día de la semana, detecta rachas positivas o negativas, y genera insights automáticos.</p>
+                            </div>
+                            <div class="proyecto-section">
+                                <h4><i class="fas fa-chart-line"></i> El Impacto</h4>
+                                <p>Los representantes pueden ver su propio rendimiento y entender sus patrones. Las comparativas son justas porque se hacen por canal.</p>
+                            </div>
+                        </div>
+                        <div class="proyecto-footer">
+                            <div class="proyecto-tags">
+                                <span class="tag">Apps Script</span>
+                                <span class="tag">Chart.js</span>
+                                <span class="tag">HTML/CSS</span>
+                            </div>
+                            <a href="#" class="proyecto-link"><span>Ver más</span><i class="fas fa-arrow-right"></i></a>
+                        </div>
+                    </div>
+                </article>
+                
+                <!-- PROYECTO 3: Dashboard Uso Extensión -->
+                <article class="proyecto-card">
+                    <div class="proyecto-image-section">
+                        <div class="proyecto-image-container">
+                            <!-- REEMPLAZA CON CAPTURA -->
+                            <div class="image-placeholder">
+                                <i class="fas fa-image"></i>
+                                <span>Captura del dashboard</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="proyecto-content-section">
+                        <div class="proyecto-header">
+                            <div class="proyecto-icon"><i class="fas fa-chart-pie"></i></div>
+                            <div class="proyecto-category">Google Apps Script</div>
+                        </div>
+                        <h3 class="proyecto-title">Dashboard de Uso de Extensión</h3>
+                        <p class="proyecto-tagline">Análisis de Adopción</p>
+                        <div class="proyecto-description">
+                            <div class="proyecto-section">
+                                <h4><i class="fas fa-eye"></i> La Oportunidad</h4>
+                                <p>Después de lanzar Case Counter Pro, necesitaba entender si realmente se usaba y si ese uso correlacionaba con mejor productividad.</p>
+                            </div>
+                            <div class="proyecto-section">
+                                <h4><i class="fas fa-lightbulb"></i> La Solución</h4>
+                                <p>Un dashboard que mide el porcentaje de adopción por equipo, identifica quiénes la usan consistentemente, y permite analizar si los equipos con mayor uso tienen mejores métricas.</p>
+                            </div>
+                            <div class="proyecto-section">
+                                <h4><i class="fas fa-chart-line"></i> El Impacto</h4>
+                                <p>Datos que demuestran el valor de la herramienta. Evidencia de que la innovación genera resultados medibles.</p>
+                            </div>
+                        </div>
+                        <div class="proyecto-footer">
+                            <div class="proyecto-tags">
+                                <span class="tag">Apps Script</span>
+                                <span class="tag">Analytics</span>
+                            </div>
+                            <a href="#" class="proyecto-link"><span>Ver más</span><i class="fas fa-arrow-right"></i></a>
+                        </div>
+                    </div>
+                </article>
+                
+                <!-- PROYECTO 4: MACAOLIMPIADAS -->
+                <article class="proyecto-card">
+                    <div class="proyecto-image-section">
+                        <div class="proyecto-image-container">
+                            <!-- REEMPLAZA CON CAPTURA -->
+                            <div class="image-placeholder">
+                                <i class="fas fa-image"></i>
+                                <span>Captura de MACAOLIMPIADAS</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="proyecto-content-section">
+                        <div class="proyecto-header">
+                            <div class="proyecto-icon"><i class="fas fa-trophy"></i></div>
+                            <div class="proyecto-category">Web App</div>
+                        </div>
+                        <h3 class="proyecto-title">MACAOLIMPIADAS</h3>
+                        <p class="proyecto-tagline">Mejora Continua Gamificada</p>
+                        <div class="proyecto-description">
+                            <div class="proyecto-section">
+                                <h4><i class="fas fa-eye"></i> La Oportunidad</h4>
+                                <p>Las métricas se sentían como presión, no como oportunidad. Cuando alguien intentaba mejorar, probaba técnicas sin medir si funcionaban. Las fortalezas de unos no se aprovechaban para ayudar a otros.</p>
+                            </div>
+                            <div class="proyecto-section">
+                                <h4><i class="fas fa-lightbulb"></i> La Solución</h4>
+                                <p>Una estrategia colaborativa donde el equipo se divide en escuadrones que compiten semanalmente. Cada semana se lanzan acciones de mejora como pilotos, se mide con datos si funcionaron, y se comparten los aprendizajes.</p>
+                            </div>
+                            <div class="proyecto-section">
+                                <h4><i class="fas fa-chart-line"></i> El Impacto</h4>
+                                <p>Las métricas se convirtieron en un juego. La competencia sana motiva a dar el máximo. Es <em>"Competimos en equipo para ganar"</em> y <em>"Damos el máximo"</em> fusionados.</p>
+                            </div>
+                        </div>
+                        <div class="proyecto-footer">
+                            <div class="proyecto-tags">
+                                <span class="tag">Apps Script</span>
+                                <span class="tag">Gamificación</span>
+                            </div>
+                            <a href="#" class="proyecto-link"><span>Ver más</span><i class="fas fa-arrow-right"></i></a>
+                        </div>
+                    </div>
+                </article>
+                
+                <!-- PROYECTO 5: Calendario de Celebraciones -->
+                <article class="proyecto-card">
+                    <div class="proyecto-image-section">
+                        <div class="proyecto-image-container">
+                            <!-- REEMPLAZA CON CAPTURA -->
+                            <div class="image-placeholder">
+                                <i class="fas fa-image"></i>
+                                <span>Captura del calendario</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="proyecto-content-section">
+                        <div class="proyecto-header">
+                            <div class="proyecto-icon"><i class="fas fa-calendar-alt"></i></div>
+                            <div class="proyecto-category">Web App</div>
+                        </div>
+                        <h3 class="proyecto-title">Calendario de Celebraciones</h3>
+                        <p class="proyecto-tagline">Reconocimientos Personalizados</p>
+                        <div class="proyecto-description">
+                            <div class="proyecto-section">
+                                <h4><i class="fas fa-eye"></i> La Oportunidad</h4>
+                                <p>En equipos grandes, los cumpleaños y meliversarios pasan desapercibidos. Cuando se reconoce a alguien, suele ser con un mensaje genérico que no refleja nada personal.</p>
+                            </div>
+                            <div class="proyecto-section">
+                                <h4><i class="fas fa-lightbulb"></i> La Solución</h4>
+                                <p>Una aplicación que centraliza cumpleaños y meliversarios con los gustos de cada persona (comida favorita, colores, música). Incluye integración con Gemini AI para crear contenido personalizado.</p>
+                            </div>
+                            <div class="proyecto-section">
+                                <h4><i class="fas fa-chart-line"></i> El Impacto</h4>
+                                <p>Cada reconocimiento se convierte en algo único y memorable. Nadie pasa desapercibido. Cada persona se siente vista, conocida y valorada.</p>
+                            </div>
+                        </div>
+                        <div class="proyecto-footer">
+                            <div class="proyecto-tags">
+                                <span class="tag">Apps Script</span>
+                                <span class="tag">Gemini AI</span>
+                            </div>
+                            <a href="#" class="proyecto-link"><span>Ver más</span><i class="fas fa-arrow-right"></i></a>
+                        </div>
+                    </div>
+                </article>
+                
+                <!-- PROYECTO 6: Votación Principios -->
+                <article class="proyecto-card">
+                    <div class="proyecto-image-section">
+                        <div class="proyecto-image-container">
+                            <!-- REEMPLAZA CON CAPTURA O IMAGEN -->
+                            <div class="image-placeholder">
+                                <i class="fas fa-image"></i>
+                                <span>Imagen del sistema</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="proyecto-content-section">
+                        <div class="proyecto-header">
+                            <div class="proyecto-icon"><i class="fas fa-vote-yea"></i></div>
+                            <div class="proyecto-category">Google Forms</div>
+                        </div>
+                        <h3 class="proyecto-title">Votación por Principios Culturales</h3>
+                        <p class="proyecto-tagline">Reconocimiento entre Pares</p>
+                        <div class="proyecto-description">
+                            <div class="proyecto-section">
+                                <h4><i class="fas fa-eye"></i> La Oportunidad</h4>
+                                <p>Los 6 principios culturales de MercadoLibre pueden quedarse como palabras si no hay mecanismos para reconocer a quienes los viven.</p>
+                            </div>
+                            <div class="proyecto-section">
+                                <h4><i class="fas fa-lightbulb"></i> La Solución</h4>
+                                <p>Un sistema de votación mensual donde cada representante nomina a compañeros que destacaron en cada principio. Los votos son anónimos pero el reconocimiento es público.</p>
+                            </div>
+                            <div class="proyecto-section">
+                                <h4><i class="fas fa-chart-line"></i> El Impacto</h4>
+                                <p>El reconocimiento viene de los compañeros, no del jefe. Los ganadores se convierten en ejemplos vivos de cómo se ve cada principio en acción.</p>
+                            </div>
+                        </div>
+                        <div class="proyecto-footer">
+                            <div class="proyecto-tags">
+                                <span class="tag">Google Forms</span>
+                                <span class="tag">Sheets</span>
+                            </div>
+                            <a href="#" class="proyecto-link"><span>Ver más</span><i class="fas fa-arrow-right"></i></a>
+                        </div>
+                    </div>
+                </article>
+                
+                <!-- PROYECTO 7: Dinosaurios -->
+                <article class="proyecto-card">
+                    <div class="proyecto-image-section">
+                        <div class="proyecto-image-container">
+                            <!-- REEMPLAZA CON FOTO DE LOS BOTONES -->
+                            <div class="image-placeholder">
+                                <i class="fas fa-image"></i>
+                                <span>Foto de los botones</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="proyecto-content-section">
+                        <div class="proyecto-header">
+                            <div class="proyecto-icon"><i class="fas fa-dragon"></i></div>
+                            <div class="proyecto-category">Diseño + Identidad</div>
+                        </div>
+                        <h3 class="proyecto-title">Dinosaurios del Equipo</h3>
+                        <p class="proyecto-tagline">Sentido de Pertenencia</p>
+                        <div class="proyecto-description">
+                            <div class="proyecto-section">
+                                <h4><i class="fas fa-eye"></i> La Oportunidad</h4>
+                                <p>En equipos grandes puede perderse el sentido de identidad individual y colectiva. Cada quien es "uno más" sin nada que lo distinga.</p>
+                            </div>
+                            <div class="proyecto-section">
+                                <h4><i class="fas fa-lightbulb"></i> La Solución</h4>
+                                <p>Botones personalizados de dinosaurios para cada miembro. Cada uno tiene el color favorito de la persona, accesorios que reflejan sus hobbies, y detalles únicos.</p>
+                            </div>
+                            <div class="proyecto-section">
+                                <h4><i class="fas fa-chart-line"></i> El Impacto</h4>
+                                <p>Identidad de equipo ("Somos los Dinos"), sentido de pertenencia individual, y una bienvenida especial para los nuevos.</p>
+                            </div>
+                        </div>
+                        <div class="proyecto-footer">
+                            <div class="proyecto-tags">
+                                <span class="tag">Diseño</span>
+                                <span class="tag">Cultura</span>
+                            </div>
+                            <a href="#" class="proyecto-link"><span>Ver más</span><i class="fas fa-arrow-right"></i></a>
+                        </div>
+                    </div>
+                </article>
+                
+            </div>
+        </div>
+    </section>
+
+    <!-- ============ HABILIDADES ============ -->
+    <section class="section habilidades" id="habilidades">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-badge"><i class="fas fa-star"></i> Habilidades</span>
+                <h2 class="section-title">Lo que estos proyectos <span>dicen de mí</span></h2>
+            </div>
+            
+            <div class="habilidades-grid">
+                <div class="habilidad-card">
+                    <div class="habilidad-icon"><i class="fas fa-brain"></i></div>
+                    <h3>Pensamiento Analítico</h3>
+                    <p>Dashboards que transforman datos en decisiones accionables. Capacidad de identificar patrones y generar insights.</p>
+                </div>
+                <div class="habilidad-card">
+                    <div class="habilidad-icon"><i class="fas fa-lightbulb"></i></div>
+                    <h3>Innovación con Propósito</h3>
+                    <p>Cada proyecto nació de una necesidad real, no de ganas de programar. Soluciones que resuelven problemas concretos.</p>
+                </div>
+                <div class="habilidad-card">
+                    <div class="habilidad-icon"><i class="fas fa-users"></i></div>
+                    <h3>Liderazgo sin Cargo</h3>
+                    <p>Impacto en 200+ personas sin ser líder formal. Influencia a través de herramientas que otros adoptan voluntariamente.</p>
+                </div>
+                <div class="habilidad-card">
+                    <div class="habilidad-icon"><i class="fas fa-code"></i></div>
+                    <h3>Desarrollo Técnico</h3>
+                    <p>Google Apps Script, Chrome Extensions, HTML/CSS/JS, integración con APIs. Aprendizaje autodidacta aplicado.</p>
+                </div>
+                <div class="habilidad-card">
+                    <div class="habilidad-icon"><i class="fas fa-robot"></i></div>
+                    <h3>IA como Herramienta</h3>
+                    <p>Uso de Gemini para personalizar reconocimientos. Inteligencia artificial aplicada a problemas reales.</p>
+                </div>
+                <div class="habilidad-card">
+                    <div class="habilidad-icon"><i class="fas fa-heart"></i></div>
+                    <h3>Cultura como Prioridad</h3>
+                    <p>Cada proyecto refuerza los principios de MercadoLibre. La tecnología al servicio de las personas.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============ CONTACTO ============ -->
+    <section class="section contacto" id="contacto">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-badge"><i class="fas fa-envelope"></i> Contacto</span>
+                <h2 class="section-title">Hacia <span>Dónde Voy</span></h2>
+            </div>
+            
+            <div class="contacto-content">
+                <p class="contacto-text">
+                    Estos proyectos nacieron de la convicción de que la tecnología debe servir a las personas. Mi objetivo es seguir creando impacto: combinando análisis de datos, innovación con inteligencia artificial, y liderazgo desde la influencia para habilitar equipos completos.
+                </p>
+                
+                <div class="contacto-links">
+                    <a href="https://www.linkedin.com/in/TU-LINKEDIN" target="_blank" class="contacto-link linkedin">
+                        <i class="fab fa-linkedin"></i>
+                        <span>LinkedIn</span>
+                    </a>
+                    <a href="mailto:TU-EMAIL@email.com" class="contacto-link email">
+                        <i class="fas fa-envelope"></i>
+                        <span>Email</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============ FOOTER ============ -->
+    <footer class="footer">
+        <p class="footer-text">Portafolio creado por Juan Sebastián Guerrero Rodríguez | 2025</p>
+        <p class="footer-quote">"No se trata de esperar oportunidades. Se trata de crearlas."</p>
+    </footer>
+
+</body>
+
+  
+</html>
