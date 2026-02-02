@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sebastián Guerrero | Portafolio de Innovación</title>
+    <title>Juan Sebastián Guerrero | Portafolio de Innovación</title>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     
@@ -65,21 +65,6 @@
             to { opacity: 1; transform: translateY(0); }
         }
 
-        @keyframes fadeInLeft {
-            from { opacity: 0; transform: translateX(-40px); }
-            to { opacity: 1; transform: translateX(0); }
-        }
-
-        @keyframes fadeInRight {
-            from { opacity: 0; transform: translateX(40px); }
-            to { opacity: 1; transform: translateX(0); }
-        }
-
-        @keyframes scaleIn {
-            from { opacity: 0; transform: scale(0.9); }
-            to { opacity: 1; transform: scale(1); }
-        }
-
         @keyframes float {
             0%, 100% { transform: translateY(0px); }
             50% { transform: translateY(-10px); }
@@ -88,11 +73,6 @@
         @keyframes pulse {
             0%, 100% { transform: scale(1); opacity: 1; }
             50% { transform: scale(1.05); opacity: 0.8; }
-        }
-
-        @keyframes shimmer {
-            0% { background-position: -200% center; }
-            100% { background-position: 200% center; }
         }
 
         @keyframes gradientMove {
@@ -109,11 +89,6 @@
         @keyframes starsMove {
             from { transform: translateY(0) rotate(0deg); }
             to { transform: translateY(-200px) rotate(1deg); }
-        }
-
-        @keyframes twinkle {
-            0%, 100% { opacity: 0.3; }
-            50% { opacity: 1; }
         }
 
         .animate-on-scroll {
@@ -171,7 +146,6 @@
             pointer-events: none;
         }
 
-        /* Orbs flotantes */
         .hero-orb {
             position: absolute;
             border-radius: 50%;
@@ -673,28 +647,6 @@
             margin-top: 4px;
         }
 
-        .image-placeholder {
-            background: linear-gradient(135deg, var(--meli-blue-light), var(--gray));
-            border-radius: var(--radius-lg);
-            aspect-ratio: 4/5;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            gap: 1rem;
-            color: var(--meli-blue);
-            border: 3px dashed var(--meli-blue);
-            transition: all 0.3s ease;
-        }
-
-        .image-placeholder:hover {
-            border-color: var(--meli-yellow);
-            background: linear-gradient(135deg, var(--meli-yellow-light), var(--gray));
-        }
-
-        .image-placeholder i { font-size: 4rem; opacity: 0.5; }
-        .image-placeholder span { font-weight: 600; opacity: 0.7; }
-
         /* ============ PROYECTOS ============ */
         .proyectos { 
             background: var(--white);
@@ -805,13 +757,28 @@
             transform: scale(1.05);
         }
 
-        .proyecto-image-container .image-placeholder {
+        .image-placeholder {
             width: 100%;
             height: 100%;
-            aspect-ratio: auto;
-            border: none;
-            border-radius: 0;
+            background: linear-gradient(135deg, var(--meli-blue-light), var(--gray));
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            gap: 1rem;
+            color: var(--meli-blue);
+            border: 3px dashed var(--meli-blue);
+            border-radius: var(--radius-lg);
+            transition: all 0.3s ease;
         }
+
+        .image-placeholder:hover {
+            border-color: var(--meli-yellow);
+            background: linear-gradient(135deg, var(--meli-yellow-light), var(--gray));
+        }
+
+        .image-placeholder i { font-size: 3rem; opacity: 0.5; }
+        .image-placeholder span { font-weight: 600; opacity: 0.7; font-size: 0.9rem; }
 
         .proyecto-content-section { 
             padding: 2.5rem; 
@@ -977,13 +944,14 @@
             font-weight: 700;
             text-decoration: none;
             transition: all 0.3s ease;
-            padding: 8px 16px;
+            padding: 10px 20px;
             border-radius: 50px;
             background: transparent;
+            border: 2px solid var(--meli-blue);
         }
 
         .proyecto-link:hover { 
-            gap: 14px; 
+            gap: 12px; 
             color: var(--white);
             background: var(--meli-blue);
         }
@@ -1216,7 +1184,7 @@
             </div>
             
             <h1 class="hero-title">
-                Sebastián<br><span>Guerrero Rodríguez</span>
+                Juan Sebastián<br><span>Guerrero Rodríguez</span>
             </h1>
             
             <p class="hero-role">
@@ -1225,7 +1193,7 @@
             </p>
             
             <p class="hero-subtitle">
-                A través de mi interés por la inteligencia artificial, descubrí una forma de crear herramientas que hoy impactan a más de 200 compañeros. Cada proyecto nació de una oportunidad detectada en el día a día y validada con el equipo.
+                A través de mi interés por la inteligencia artificial, descubrí una forma de crear herramientas que hoy utilizan mis compañeros en el día a día. Cada proyecto nació de una oportunidad detectada en la gestión y validada con el equipo.
             </p>
             
             <div class="hero-stats">
@@ -1239,7 +1207,7 @@
                 </div>
                 <div class="stat-badge">
                     <i class="fas fa-users"></i>
-                    <span>200+ personas impactadas</span>
+                    <span>Equipos de 10 a 200 personas</span>
                 </div>
                 <div class="stat-badge">
                     <i class="fas fa-puzzle-piece"></i>
@@ -1291,7 +1259,7 @@
                     </div>
                     
                     <p class="animate-on-scroll animate-delay-3">
-                        A lo largo de estos dos años, he desarrollado <strong>7 proyectos de innovación</strong> que hoy utilizan más de 200 compañeros. Desde una extensión de Chrome para productividad en tiempo real, hasta sistemas de gamificación y reconocimiento que fortalecen nuestra cultura.
+                        A lo largo de estos dos años, he desarrollado <strong>7 proyectos de innovación</strong> que hoy utilizan compañeros de diferentes equipos. Desde una extensión de Chrome para productividad en tiempo real, hasta sistemas de gamificación y reconocimiento que fortalecen nuestra cultura.
                     </p>
                     
                     <div class="principios-tags animate-on-scroll animate-delay-4">
@@ -1314,8 +1282,8 @@
                                 <div class="visual-stat-label">Proyectos</div>
                             </div>
                             <div class="visual-stat">
-                                <div class="visual-stat-number">200+</div>
-                                <div class="visual-stat-label">Usuarios</div>
+                                <div class="visual-stat-number">2+</div>
+                                <div class="visual-stat-label">Años</div>
                             </div>
                         </div>
                     </div>
@@ -1339,10 +1307,10 @@
                 <article class="proyecto-card animate-on-scroll">
                     <div class="proyecto-image-section">
                         <div class="proyecto-image-container">
-                            <!-- REEMPLAZA CON TU CAPTURA: <img src="case-counter.png" alt="Case Counter Pro"> -->
+                            <!-- REEMPLAZA CON: <img src="case-counter.png" alt="Case Counter Pro"> -->
                             <div class="image-placeholder">
                                 <i class="fas fa-image"></i>
-                                <span>Captura de la extensión</span>
+                                <span>case-counter.png</span>
                             </div>
                         </div>
                     </div>
@@ -1352,7 +1320,7 @@
                             <div class="proyecto-category">Extensión de Chrome</div>
                         </div>
                         <h3 class="proyecto-title">Case Counter Pro</h3>
-                        <p class="proyecto-tagline">Productividad en Tiempo Real</p>
+                        <p class="proyecto-tagline">Productividad en Tiempo Real • 200+ usuarios</p>
                         <div class="proyecto-description">
                             <div class="proyecto-section">
                                 <h4><i class="fas fa-eye"></i> La Oportunidad</h4>
@@ -1373,7 +1341,7 @@
                                 <span class="tag">Chrome Extension</span>
                                 <span class="tag">JavaScript</span>
                             </div>
-                            <a href="#" class="proyecto-link"><span>Ver más</span><i class="fas fa-arrow-right"></i></a>
+                            <a href="https://chromewebstore.google.com/detail/case-counter-pro/hpihppkhikgbgkabmhnbgcndollhkpbe" target="_blank" class="proyecto-link"><span>Ver extensión</span><i class="fas fa-external-link-alt"></i></a>
                         </div>
                     </div>
                 </article>
@@ -1382,10 +1350,10 @@
                 <article class="proyecto-card animate-on-scroll">
                     <div class="proyecto-image-section">
                         <div class="proyecto-image-container">
-                            <!-- REEMPLAZA CON TU CAPTURA -->
+                            <!-- REEMPLAZA CON: <img src="dashboard-productividad.png" alt="Dashboard Productividad"> -->
                             <div class="image-placeholder">
                                 <i class="fas fa-image"></i>
-                                <span>Captura del dashboard</span>
+                                <span>dashboard-productividad.png</span>
                             </div>
                         </div>
                     </div>
@@ -1395,7 +1363,7 @@
                             <div class="proyecto-category">Google Apps Script</div>
                         </div>
                         <h3 class="proyecto-title">Dashboard de Productividad</h3>
-                        <p class="proyecto-tagline">Visibilidad del Rendimiento Día a Día</p>
+                        <p class="proyecto-tagline">Visibilidad del Rendimiento Día a Día • ~70 usuarios</p>
                         <div class="proyecto-description">
                             <div class="proyecto-section">
                                 <h4><i class="fas fa-eye"></i> La Oportunidad</h4>
@@ -1416,7 +1384,7 @@
                                 <span class="tag">Chart.js</span>
                                 <span class="tag">HTML/CSS</span>
                             </div>
-                            <a href="#" class="proyecto-link"><span>Ver más</span><i class="fas fa-arrow-right"></i></a>
+                            <a href="https://script.google.com/a/macros/mercadolibre.com.co/s/AKfycbyfaxolYTe9i2U8_T0hbSDFb9Og_go4bHgh11LyKKjOqwHBfCPrVZGY_eeReaw2ysX7Zg/exec" target="_blank" class="proyecto-link"><span>Ver dashboard</span><i class="fas fa-external-link-alt"></i></a>
                         </div>
                     </div>
                 </article>
@@ -1425,10 +1393,10 @@
                 <article class="proyecto-card animate-on-scroll">
                     <div class="proyecto-image-section">
                         <div class="proyecto-image-container">
-                            <!-- REEMPLAZA CON TU CAPTURA -->
+                            <!-- REEMPLAZA CON: <img src="dashboard-uso.png" alt="Dashboard Uso Extensión"> -->
                             <div class="image-placeholder">
                                 <i class="fas fa-image"></i>
-                                <span>Captura del dashboard</span>
+                                <span>dashboard-uso.png</span>
                             </div>
                         </div>
                     </div>
@@ -1438,7 +1406,7 @@
                             <div class="proyecto-category">Google Apps Script</div>
                         </div>
                         <h3 class="proyecto-title">Dashboard de Adopción</h3>
-                        <p class="proyecto-tagline">Análisis del Uso de la Extensión</p>
+                        <p class="proyecto-tagline">Análisis del Uso de la Extensión • ~70 usuarios</p>
                         <div class="proyecto-description">
                             <div class="proyecto-section">
                                 <h4><i class="fas fa-eye"></i> La Oportunidad</h4>
@@ -1458,19 +1426,61 @@
                                 <span class="tag">Apps Script</span>
                                 <span class="tag">Analytics</span>
                             </div>
-                            <a href="#" class="proyecto-link"><span>Ver más</span><i class="fas fa-arrow-right"></i></a>
+                            <a href="https://script.google.com/a/macros/mercadolibre.com.co/s/AKfycbw0sWA--ApnR75JCHKst8WqMadwQ7y7hVhfqLp6GPqqKhd2SGz-RbjowglPAaUDU-bGvw/exec" target="_blank" class="proyecto-link"><span>Ver dashboard</span><i class="fas fa-external-link-alt"></i></a>
                         </div>
                     </div>
                 </article>
                 
-                <!-- PROYECTO 4: MACAOLIMPIADAS -->
+                <!-- PROYECTO 4: Dashboard TMC -->
                 <article class="proyecto-card animate-on-scroll">
                     <div class="proyecto-image-section">
                         <div class="proyecto-image-container">
-                            <!-- REEMPLAZA CON TU CAPTURA -->
+                            <!-- REEMPLAZA CON: <img src="dashboard-tmc.png" alt="Dashboard TMC"> -->
                             <div class="image-placeholder">
                                 <i class="fas fa-image"></i>
-                                <span>Captura de MACAOLIMPIADAS</span>
+                                <span>dashboard-tmc.png</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="proyecto-content-section">
+                        <div class="proyecto-header">
+                            <div class="proyecto-icon"><i class="fas fa-clock"></i></div>
+                            <div class="proyecto-category">Google Apps Script</div>
+                        </div>
+                        <h3 class="proyecto-title">Dashboard de TMC</h3>
+                        <p class="proyecto-tagline">Análisis de Tiempos de Gestión • ~70 usuarios</p>
+                        <div class="proyecto-description">
+                            <div class="proyecto-section">
+                                <h4><i class="fas fa-eye"></i> La Oportunidad</h4>
+                                <p>Identifiqué que el tiempo medio de gestión (TMC) es una métrica clave, pero no teníamos una forma visual de entender cómo evolucionaba y qué factores lo afectaban.</p>
+                            </div>
+                            <div class="proyecto-section">
+                                <h4><i class="fas fa-lightbulb"></i> La Solución</h4>
+                                <p>Un dashboard especializado en el análisis de tiempos que permite visualizar tendencias, comparar por períodos y entender los patrones de gestión.</p>
+                            </div>
+                            <div class="proyecto-section">
+                                <h4><i class="fas fa-chart-line"></i> El Impacto</h4>
+                                <p>Visibilidad clara de los tiempos de gestión que permite identificar oportunidades de mejora y optimizar procesos.</p>
+                            </div>
+                        </div>
+                        <div class="proyecto-footer">
+                            <div class="proyecto-tags">
+                                <span class="tag">Apps Script</span>
+                                <span class="tag">Chart.js</span>
+                            </div>
+                            <a href="https://script.google.com/a/macros/mercadolibre.com.co/s/AKfycbx8SKZMe4ZAhc-5CUejc_1SvPPhbO8WwG_X0ByTQPjAV19VOX0YtdoG3BpT1wUUqLdMzA/exec" target="_blank" class="proyecto-link"><span>Ver dashboard</span><i class="fas fa-external-link-alt"></i></a>
+                        </div>
+                    </div>
+                </article>
+                
+                <!-- PROYECTO 5: MACAOLIMPIADAS -->
+                <article class="proyecto-card animate-on-scroll">
+                    <div class="proyecto-image-section">
+                        <div class="proyecto-image-container">
+                            <!-- REEMPLAZA CON: <img src="macaolimpiadas.png" alt="MACAOLIMPIADAS"> -->
+                            <div class="image-placeholder">
+                                <i class="fas fa-image"></i>
+                                <span>macaolimpiadas.png</span>
                             </div>
                         </div>
                     </div>
@@ -1480,7 +1490,7 @@
                             <div class="proyecto-category">Web App</div>
                         </div>
                         <h3 class="proyecto-title">MACAOLIMPIADAS</h3>
-                        <p class="proyecto-tagline">Mejora Continua Gamificada</p>
+                        <p class="proyecto-tagline">Mejora Continua Gamificada • ~10 usuarios</p>
                         <div class="proyecto-description">
                             <div class="proyecto-section">
                                 <h4><i class="fas fa-eye"></i> La Oportunidad</h4>
@@ -1500,19 +1510,19 @@
                                 <span class="tag">Apps Script</span>
                                 <span class="tag">Gamificación</span>
                             </div>
-                            <a href="#" class="proyecto-link"><span>Ver más</span><i class="fas fa-arrow-right"></i></a>
+                            <a href="https://script.google.com/a/macros/mercadolibre.com.co/s/AKfycbwE22sGEZO2NZJdYLrj-bsJOxcQlb6kZX5QHFUEL7tZbY7OSSDVOzdQ_I6ZJR_wrHB2/exec" target="_blank" class="proyecto-link"><span>Ver plataforma</span><i class="fas fa-external-link-alt"></i></a>
                         </div>
                     </div>
                 </article>
                 
-                <!-- PROYECTO 5: Calendario de Celebraciones -->
+                <!-- PROYECTO 6: Calendario de Celebraciones -->
                 <article class="proyecto-card animate-on-scroll">
                     <div class="proyecto-image-section">
                         <div class="proyecto-image-container">
-                            <!-- REEMPLAZA CON TU CAPTURA -->
+                            <!-- REEMPLAZA CON: <img src="calendario.png" alt="Calendario de Celebraciones"> -->
                             <div class="image-placeholder">
                                 <i class="fas fa-image"></i>
-                                <span>Captura del calendario</span>
+                                <span>calendario.png</span>
                             </div>
                         </div>
                     </div>
@@ -1522,7 +1532,7 @@
                             <div class="proyecto-category">Web App</div>
                         </div>
                         <h3 class="proyecto-title">Calendario de Celebraciones</h3>
-                        <p class="proyecto-tagline">Reconocimientos Personalizados</p>
+                        <p class="proyecto-tagline">Reconocimientos Personalizados • 150+ usuarios</p>
                         <div class="proyecto-description">
                             <div class="proyecto-section">
                                 <h4><i class="fas fa-eye"></i> La Oportunidad</h4>
@@ -1542,19 +1552,19 @@
                                 <span class="tag">Apps Script</span>
                                 <span class="tag">Gemini AI</span>
                             </div>
-                            <a href="#" class="proyecto-link"><span>Ver más</span><i class="fas fa-arrow-right"></i></a>
+                            <a href="https://script.google.com/a/macros/mercadolibre.com.co/s/AKfycbwKtN0wvtUj8XqCv8Yky9S_Myb2GiufqP-wmgMQ4_QWyiWUYH80krBSoKU5Y-PayJF1-Q/exec" target="_blank" class="proyecto-link"><span>Ver calendario</span><i class="fas fa-external-link-alt"></i></a>
                         </div>
                     </div>
                 </article>
                 
-                <!-- PROYECTO 6: Votación Principios -->
+                <!-- PROYECTO 7: Votación Principios -->
                 <article class="proyecto-card animate-on-scroll">
                     <div class="proyecto-image-section">
                         <div class="proyecto-image-container">
-                            <!-- REEMPLAZA CON TU IMAGEN -->
+                            <!-- REEMPLAZA CON: <img src="votacion-principios.png" alt="Votación Principios"> -->
                             <div class="image-placeholder">
                                 <i class="fas fa-image"></i>
-                                <span>Imagen del sistema</span>
+                                <span>votacion-principios.png</span>
                             </div>
                         </div>
                     </div>
@@ -1564,7 +1574,7 @@
                             <div class="proyecto-category">Google Forms</div>
                         </div>
                         <h3 class="proyecto-title">Votación por Principios Culturales</h3>
-                        <p class="proyecto-tagline">Reconocimiento entre Compañeros</p>
+                        <p class="proyecto-tagline">Reconocimiento entre Compañeros • ~15 usuarios</p>
                         <div class="proyecto-description">
                             <div class="proyecto-section">
                                 <h4><i class="fas fa-eye"></i> La Oportunidad</h4>
@@ -1584,19 +1594,19 @@
                                 <span class="tag">Google Forms</span>
                                 <span class="tag">Sheets</span>
                             </div>
-                            <a href="#" class="proyecto-link"><span>Ver más</span><i class="fas fa-arrow-right"></i></a>
+                            <span class="proyecto-link" style="cursor: default; border-color: var(--gray);"><span>Interno</span><i class="fas fa-lock"></i></span>
                         </div>
                     </div>
                 </article>
                 
-                <!-- PROYECTO 7: Dinosaurios -->
+                <!-- PROYECTO 8: Dinosaurios -->
                 <article class="proyecto-card animate-on-scroll">
                     <div class="proyecto-image-section">
                         <div class="proyecto-image-container">
-                            <!-- REEMPLAZA CON FOTO DE LOS BOTONES -->
+                            <!-- REEMPLAZA CON: <img src="dinosaurios.png" alt="Dinosaurios del Equipo"> -->
                             <div class="image-placeholder">
                                 <i class="fas fa-image"></i>
-                                <span>Foto de los botones</span>
+                                <span>dinosaurios.png</span>
                             </div>
                         </div>
                     </div>
@@ -1606,7 +1616,7 @@
                             <div class="proyecto-category">Diseño + Identidad</div>
                         </div>
                         <h3 class="proyecto-title">Dinosaurios del Equipo</h3>
-                        <p class="proyecto-tagline">Sentido de Pertenencia</p>
+                        <p class="proyecto-tagline">Sentido de Pertenencia • ~15 usuarios</p>
                         <div class="proyecto-description">
                             <div class="proyecto-section">
                                 <h4><i class="fas fa-eye"></i> La Oportunidad</h4>
@@ -1626,7 +1636,7 @@
                                 <span class="tag">Diseño</span>
                                 <span class="tag">Cultura</span>
                             </div>
-                            <a href="#" class="proyecto-link"><span>Ver más</span><i class="fas fa-arrow-right"></i></a>
+                            <span class="proyecto-link" style="cursor: default; border-color: var(--gray);"><span>Físico</span><i class="fas fa-hand-holding-heart"></i></span>
                         </div>
                     </div>
                 </article>
@@ -1658,7 +1668,7 @@
                 <div class="habilidad-card animate-on-scroll animate-delay-3">
                     <div class="habilidad-icon"><i class="fas fa-users"></i></div>
                     <h3>Impacto Colaborativo</h3>
-                    <p>Más de 200 compañeros usan estas herramientas voluntariamente. Influencia a través de soluciones que otros adoptan porque les generan valor.</p>
+                    <p>Herramientas que compañeros usan voluntariamente porque les generan valor. Influencia a través de soluciones útiles.</p>
                 </div>
                 <div class="habilidad-card animate-on-scroll animate-delay-4">
                     <div class="habilidad-icon"><i class="fas fa-code"></i></div>
@@ -1683,7 +1693,7 @@
     <footer class="footer">
         <div class="footer-content">
             <div class="footer-logo">🚀</div>
-            <p class="footer-text">Sebastián Guerrero Rodríguez</p>
+            <p class="footer-text">Juan Sebastián Guerrero Rodríguez</p>
             <p class="footer-text">Representante del equipo Publicaciones Mature</p>
             <p class="footer-quote">"La innovación nace de ver oportunidades donde otros ven el día a día"</p>
             <p class="footer-year">2025</p>
