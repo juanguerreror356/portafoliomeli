@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Juan Sebastián Guerrero | Portafolio de Innovación</title>
+    <title>Juan Sebastián Guerrero | Portafolio</title>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     
@@ -233,7 +233,7 @@
         .hero-role {
             font-size: 1rem;
             color: rgba(255,255,255,0.6);
-            margin-bottom: 2rem;
+            margin-bottom: 2.5rem;
             animation: fadeInUp 0.8s ease 0.3s both;
             font-weight: 500;
         }
@@ -244,23 +244,23 @@
         }
 
         .hero-subtitle {
-            font-size: clamp(1.05rem, 2.5vw, 1.3rem);
+            font-size: clamp(1.05rem, 2.5vw, 1.25rem);
             color: rgba(255,255,255,0.85);
-            margin-bottom: 2.5rem;
+            margin-bottom: 3.5rem;
             font-weight: 400;
             animation: fadeInUp 0.8s ease 0.4s both;
             max-width: 750px;
             margin-left: auto;
             margin-right: auto;
-            line-height: 1.8;
+            line-height: 1.9;
         }
 
         .hero-stats {
             display: flex;
             justify-content: center;
-            gap: 1rem;
+            gap: 1.25rem;
             flex-wrap: wrap;
-            margin-bottom: 3rem;
+            margin-bottom: 4rem;
             animation: fadeInUp 0.8s ease 0.6s both;
         }
 
@@ -303,20 +303,21 @@
         .hero-cta {
             display: flex;
             justify-content: center;
-            gap: 1.25rem;
+            gap: 1.5rem;
             flex-wrap: wrap;
             animation: fadeInUp 0.8s ease 0.8s both;
+            margin-bottom: 5rem;
         }
 
         .btn {
-            padding: 16px 36px;
+            padding: 18px 40px;
             border-radius: 50px;
             font-weight: 700;
             font-size: 1rem;
             text-decoration: none;
             display: inline-flex;
             align-items: center;
-            gap: 10px;
+            gap: 12px;
             transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
             cursor: pointer;
             border: none;
@@ -366,7 +367,7 @@
 
         .scroll-indicator {
             position: absolute;
-            bottom: 2.5rem;
+            bottom: 3rem;
             left: 50%;
             transform: translateX(-50%);
             animation: fadeInUp 1s ease 1.2s both;
@@ -376,7 +377,7 @@
             display: flex;
             flex-direction: column;
             align-items: center;
-            gap: 8px;
+            gap: 10px;
             text-decoration: none;
             color: rgba(255,255,255,0.5);
             transition: all 0.3s ease;
@@ -435,10 +436,6 @@
             box-shadow: var(--shadow-md);
         }
 
-        .section-badge i {
-            font-size: 0.9rem;
-        }
-
         .section-title {
             font-size: clamp(2.2rem, 5vw, 3.2rem);
             font-weight: 900;
@@ -480,7 +477,7 @@
 
         .sobre-mi-content {
             display: grid;
-            grid-template-columns: 1.3fr 0.7fr;
+            grid-template-columns: 1fr 1fr;
             gap: 5rem;
             align-items: center;
         }
@@ -616,6 +613,26 @@
             color: var(--text-light);
             font-size: 1rem;
             line-height: 1.7;
+            margin-bottom: 1rem;
+        }
+
+        .visual-card ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        .visual-card ul li {
+            padding: 8px 0;
+            color: var(--text-light);
+            font-size: 0.95rem;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .visual-card ul li i {
+            color: var(--meli-blue);
+            font-size: 0.85rem;
         }
 
         .visual-stats {
@@ -647,9 +664,91 @@
             margin-top: 4px;
         }
 
+        /* ============ MI ROL SECTION ============ */
+        .mi-rol {
+            background: var(--white);
+        }
+
+        .rol-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 2rem;
+        }
+
+        .rol-card {
+            background: var(--gradient-card);
+            border-radius: var(--radius-xl);
+            padding: 2.5rem;
+            border: 1px solid var(--gray);
+            transition: all 0.4s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .rol-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: var(--gradient-accent);
+            transform: scaleX(0);
+            transition: transform 0.4s ease;
+        }
+
+        .rol-card:hover::before {
+            transform: scaleX(1);
+        }
+
+        .rol-card:hover {
+            transform: translateY(-8px);
+            box-shadow: var(--shadow-xl);
+            border-color: var(--meli-blue);
+        }
+
+        .rol-card-icon {
+            width: 60px;
+            height: 60px;
+            background: var(--meli-blue-light);
+            border-radius: var(--radius-md);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 1.5rem;
+            transition: all 0.3s ease;
+        }
+
+        .rol-card:hover .rol-card-icon {
+            background: var(--gradient-accent);
+        }
+
+        .rol-card-icon i {
+            font-size: 1.5rem;
+            color: var(--meli-blue);
+            transition: color 0.3s ease;
+        }
+
+        .rol-card:hover .rol-card-icon i {
+            color: var(--dark);
+        }
+
+        .rol-card h3 {
+            font-size: 1.25rem;
+            font-weight: 800;
+            color: var(--dark);
+            margin-bottom: 1rem;
+        }
+
+        .rol-card p {
+            color: var(--text-light);
+            font-size: 0.95rem;
+            line-height: 1.8;
+        }
+
         /* ============ PROYECTOS ============ */
         .proyectos { 
-            background: var(--white);
+            background: var(--gray-light);
             position: relative;
         }
 
@@ -670,7 +769,7 @@
         }
 
         .proyecto-card {
-            background: var(--gradient-card);
+            background: var(--white);
             border-radius: var(--radius-xl);
             border: 1px solid var(--gray);
             overflow: hidden;
@@ -1133,7 +1232,7 @@
             }
             .sobre-mi-visual { 
                 order: -1; 
-                max-width: 400px; 
+                max-width: 500px; 
                 margin: 0 auto; 
             }
             .proyecto-card { 
@@ -1142,6 +1241,9 @@
             .proyecto-card:nth-child(even) { direction: ltr; }
             .proyecto-image-section { 
                 min-height: 300px; 
+            }
+            .rol-grid {
+                grid-template-columns: 1fr;
             }
         }
 
@@ -1179,8 +1281,8 @@
         
         <div class="hero-content">
             <div class="hero-badge">
-                <i class="fas fa-rocket"></i>
-                <span>Innovación desde la Primera Línea</span>
+                <i class="fas fa-heart"></i>
+                <span>Creciendo con el Equipo</span>
             </div>
             
             <h1 class="hero-title">
@@ -1189,11 +1291,11 @@
             
             <p class="hero-role">
                 <i class="fas fa-building"></i>
-                Representante del equipo Publicaciones Mature
+                Semi-Senior · Equipo Publicaciones Mature
             </p>
             
             <p class="hero-subtitle">
-                A través de mi interés por la inteligencia artificial, descubrí una forma de crear herramientas que hoy utilizan mis compañeros en el día a día. Cada proyecto nació de una oportunidad detectada en la gestión y validada con el equipo.
+                Este portafolio comparte un poco más a detalle mi gestión en MercadoLibre por fuera de mi rol como representante de Customer Service. Son iniciativas que nacieron de querer aportar al equipo y que, con mucho aprendizaje y horas de dedicación, hoy son herramientas que usamos en el día a día.
             </p>
             
             <div class="hero-stats">
@@ -1203,33 +1305,29 @@
                 </div>
                 <div class="stat-badge">
                     <i class="fas fa-lightbulb"></i>
-                    <span>7 proyectos de innovación</span>
+                    <span>8 iniciativas desarrolladas</span>
                 </div>
                 <div class="stat-badge">
                     <i class="fas fa-users"></i>
                     <span>Equipos de 10 a 200 personas</span>
-                </div>
-                <div class="stat-badge">
-                    <i class="fas fa-puzzle-piece"></i>
-                    <span>Extensión de Chrome publicada</span>
                 </div>
             </div>
             
             <div class="hero-cta">
                 <a href="#proyectos" class="btn btn-primary">
                     <i class="fas fa-folder-open"></i>
-                    Ver Proyectos
+                    Ver Iniciativas
                 </a>
                 <a href="#sobre-mi" class="btn btn-secondary">
                     <i class="fas fa-user"></i>
-                    Conocer mi Historia
+                    Mi Historia
                 </a>
             </div>
         </div>
         
         <div class="scroll-indicator">
             <a href="#sobre-mi">
-                <span>Explorar</span>
+                <span>Descubrir</span>
                 <i class="fas fa-chevron-down"></i>
             </a>
         </div>
@@ -1246,25 +1344,25 @@
             <div class="sobre-mi-content">
                 <div class="sobre-mi-text">
                     <p class="animate-on-scroll">
-                        Siempre tuve un espíritu emprendedor e innovador, pero el verdadero punto de quiebre llegó cuando descubrí la calidad de empresa que es <strong>MercadoLibre</strong> y su conexión con la <strong>inteligencia artificial</strong>.
+                        Siempre tuve un espíritu emprendedor e innovador. Cuando descubrí la calidad de empresa que es <strong>MercadoLibre</strong> y su conexión con la <strong>inteligencia artificial</strong>, supe que mi lugar estaba aquí y que quería aportar de una manera diferente.
                     </p>
                     <p class="animate-on-scroll animate-delay-1">
-                        Desde ese momento supe que mi lugar está aquí. Empecé a explorar cómo la IA podía ayudarme a crear soluciones para oportunidades que detectaba en mi gestión diaria. Al compartir estas ideas con mis compañeros, confirmé que muchas de esas necesidades eran compartidas por todo el equipo.
+                        No soy programador. Pero eso no me detuvo. Encontré en herramientas como <strong>MeLi GPT</strong>, <strong>Claude</strong> y <strong>ChatGPT</strong> aliados que me permitieron aprender y construir soluciones como si fuera un desarrollador. Han sido muchas horas de esfuerzo, de educarme, de probar y fallar, para lograr que cada herramienta funcione como la imaginé.
                     </p>
                     
                     <div class="highlight-box animate-on-scroll animate-delay-2">
                         <p>
-                            "Cada herramienta que construí nació de escuchar, validar con el equipo, y actuar. Eso es lo que significa para mí vivir nuestros principios culturales."
+                            "Cada herramienta nació de escuchar al equipo, detectar una oportunidad, y dedicar el tiempo necesario para construir algo que realmente ayudara."
                         </p>
                     </div>
                     
                     <p class="animate-on-scroll animate-delay-3">
-                        A lo largo de estos dos años, he desarrollado <strong>7 proyectos de innovación</strong> que hoy utilizan compañeros de diferentes equipos. Desde una extensión de Chrome para productividad en tiempo real, hasta sistemas de gamificación y reconocimiento que fortalecen nuestra cultura.
+                        Lo que me motiva es ver cómo estas iniciativas hacen más fácil el día a día de mis compañeros. No busco crédito, busco que el equipo crezca. Esa es mi forma de aportar.
                     </p>
                     
                     <div class="principios-tags animate-on-scroll animate-delay-4">
                         <span class="principio-tag"><i class="fas fa-rocket"></i> Emprendemos</span>
-                        <span class="principio-tag"><i class="fas fa-trophy"></i> Competimos en equipo para ganar</span>
+                        <span class="principio-tag"><i class="fas fa-trophy"></i> Competimos en equipo</span>
                         <span class="principio-tag"><i class="fas fa-fire"></i> Damos el máximo</span>
                     </div>
                 </div>
@@ -1272,14 +1370,20 @@
                 <div class="sobre-mi-visual animate-on-scroll animate-delay-2">
                     <div class="visual-card">
                         <div class="visual-card-icon">
-                            <i class="fas fa-robot"></i>
+                            <i class="fas fa-graduation-cap"></i>
                         </div>
-                        <h3>IA + Innovación</h3>
-                        <p>Combinando inteligencia artificial con las necesidades reales del equipo para crear soluciones que generan valor.</p>
+                        <h3>Aprendizaje Autodidacta</h3>
+                        <p>Sin ser programador, aprendí a construir herramientas usando IA como aliada:</p>
+                        <ul>
+                            <li><i class="fas fa-check"></i> MeLi GPT</li>
+                            <li><i class="fas fa-check"></i> Claude (Opus 4.5 y Sonnet 4.5)</li>
+                            <li><i class="fas fa-check"></i> ChatGPT 5 y 5.2</li>
+                            <li><i class="fas fa-check"></i> Google Apps Script</li>
+                        </ul>
                         <div class="visual-stats">
                             <div class="visual-stat">
-                                <div class="visual-stat-number">7</div>
-                                <div class="visual-stat-label">Proyectos</div>
+                                <div class="visual-stat-number">8</div>
+                                <div class="visual-stat-label">Iniciativas</div>
                             </div>
                             <div class="visual-stat">
                                 <div class="visual-stat-number">2+</div>
@@ -1292,12 +1396,74 @@
         </div>
     </section>
 
+    <!-- ============ MI ROL EN EL EQUIPO ============ -->
+    <section class="section mi-rol" id="mi-rol">
+        <div class="container">
+            <div class="section-header animate-on-scroll">
+                <span class="section-badge"><i class="fas fa-users"></i> Mi Rol</span>
+                <h2 class="section-title">Más Allá de las <span>Herramientas</span></h2>
+                <p class="section-subtitle">Además de desarrollar estas iniciativas, mi día a día incluye apoyar al equipo de diferentes formas</p>
+            </div>
+            
+            <div class="rol-grid">
+                <div class="rol-card animate-on-scroll animate-delay-1">
+                    <div class="rol-card-icon">
+                        <i class="fas fa-headset"></i>
+                    </div>
+                    <h3>Apoyo como Semi-Senior</h3>
+                    <p>Acompaño a mi equipo resolviendo dudas en nuestros grupos internos, compartiendo conocimiento sobre procesos y ayudando a quienes lo necesitan. Mi rol es estar disponible para que nadie se quede sin respuesta.</p>
+                </div>
+                
+                <div class="rol-card animate-on-scroll animate-delay-2">
+                    <div class="rol-card-icon">
+                        <i class="fas fa-chart-line"></i>
+                    </div>
+                    <h3>Updates de Métricas</h3>
+                    <p>Comparto regularmente cómo vamos como equipo en productividad y otras métricas clave. La idea es que todos tengamos visibilidad de nuestro progreso y podamos tomar acciones a tiempo.</p>
+                </div>
+                
+                <div class="rol-card animate-on-scroll animate-delay-3">
+                    <div class="rol-card-icon">
+                        <i class="fas fa-lightbulb"></i>
+                    </div>
+                    <h3>Propuesta de Acciones</h3>
+                    <p>Mes a mes propongo diferentes iniciativas para traccionar las oportunidades que identificamos. No se trata solo de señalar qué mejorar, sino de proponer cómo hacerlo y acompañar en la ejecución.</p>
+                </div>
+                
+                <div class="rol-card animate-on-scroll animate-delay-4">
+                    <div class="rol-card-icon">
+                        <i class="fas fa-glass-cheers"></i>
+                    </div>
+                    <h3>Conexión del Equipo</h3>
+                    <p>Organizo y propongo salidas de equipo para que podamos conectar y desconectarnos un poco del trabajo. Creo que los equipos que se conocen fuera del trabajo, trabajan mejor juntos.</p>
+                </div>
+                
+                <div class="rol-card animate-on-scroll animate-delay-5">
+                    <div class="rol-card-icon">
+                        <i class="fas fa-heart"></i>
+                    </div>
+                    <h3>Referente de Clima</h3>
+                    <p>Como referente de clima, mi misión es que nadie pase desapercibido. Desde vasos personalizados hasta retratos únicos para cumpleaños, busco que cada persona se sienta reconocida y valorada.</p>
+                </div>
+                
+                <div class="rol-card animate-on-scroll animate-delay-1">
+                    <div class="rol-card-icon">
+                        <i class="fas fa-hands-helping"></i>
+                    </div>
+                    <h3>Siempre Disponible</h3>
+                    <p>Mi puerta siempre está abierta. Ya sea una duda técnica, una situación difícil con un caso, o simplemente necesitar hablar, estoy ahí para apoyar. El equipo es primero.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    
     <!-- ============ PROYECTOS ============ -->
     <section class="section proyectos" id="proyectos">
         <div class="container">
             <div class="section-header animate-on-scroll">
-                <span class="section-badge"><i class="fas fa-folder-open"></i> Proyectos</span>
-                <h2 class="section-title">Soluciones que <span>Construí</span></h2>
+                <span class="section-badge"><i class="fas fa-folder-open"></i> Iniciativas</span>
+                <h2 class="section-title">Lo que He <span>Construido</span></h2>
                 <p class="section-subtitle">Cada proyecto nació de una oportunidad detectada en el día a día y validada con el equipo</p>
             </div>
             
@@ -1307,7 +1473,6 @@
                 <article class="proyecto-card animate-on-scroll">
                     <div class="proyecto-image-section">
                         <div class="proyecto-image-container">
-                            <!-- REEMPLAZA CON: <img src="case-counter.png" alt="Case Counter Pro"> -->
                             <div class="image-placeholder">
                                 <i class="fas fa-image"></i>
                                 <span>case-counter.png</span>
@@ -1350,7 +1515,6 @@
                 <article class="proyecto-card animate-on-scroll">
                     <div class="proyecto-image-section">
                         <div class="proyecto-image-container">
-                            <!-- REEMPLAZA CON: <img src="dashboard-productividad.png" alt="Dashboard Productividad"> -->
                             <div class="image-placeholder">
                                 <i class="fas fa-image"></i>
                                 <span>dashboard-productividad.png</span>
@@ -1393,7 +1557,6 @@
                 <article class="proyecto-card animate-on-scroll">
                     <div class="proyecto-image-section">
                         <div class="proyecto-image-container">
-                            <!-- REEMPLAZA CON: <img src="dashboard-uso.png" alt="Dashboard Uso Extensión"> -->
                             <div class="image-placeholder">
                                 <i class="fas fa-image"></i>
                                 <span>dashboard-uso.png</span>
@@ -1435,7 +1598,6 @@
                 <article class="proyecto-card animate-on-scroll">
                     <div class="proyecto-image-section">
                         <div class="proyecto-image-container">
-                            <!-- REEMPLAZA CON: <img src="dashboard-tmc.png" alt="Dashboard TMC"> -->
                             <div class="image-placeholder">
                                 <i class="fas fa-image"></i>
                                 <span>dashboard-tmc.png</span>
@@ -1477,7 +1639,6 @@
                 <article class="proyecto-card animate-on-scroll">
                     <div class="proyecto-image-section">
                         <div class="proyecto-image-container">
-                            <!-- REEMPLAZA CON: <img src="macaolimpiadas.png" alt="MACAOLIMPIADAS"> -->
                             <div class="image-placeholder">
                                 <i class="fas fa-image"></i>
                                 <span>macaolimpiadas.png</span>
@@ -1519,7 +1680,6 @@
                 <article class="proyecto-card animate-on-scroll">
                     <div class="proyecto-image-section">
                         <div class="proyecto-image-container">
-                            <!-- REEMPLAZA CON: <img src="calendario.png" alt="Calendario de Celebraciones"> -->
                             <div class="image-placeholder">
                                 <i class="fas fa-image"></i>
                                 <span>calendario.png</span>
@@ -1561,7 +1721,6 @@
                 <article class="proyecto-card animate-on-scroll">
                     <div class="proyecto-image-section">
                         <div class="proyecto-image-container">
-                            <!-- REEMPLAZA CON: <img src="votacion-principios.png" alt="Votación Principios"> -->
                             <div class="image-placeholder">
                                 <i class="fas fa-image"></i>
                                 <span>votacion-principios.png</span>
@@ -1594,7 +1753,7 @@
                                 <span class="tag">Google Forms</span>
                                 <span class="tag">Sheets</span>
                             </div>
-                            <span class="proyecto-link" style="cursor: default; border-color: var(--gray);"><span>Interno</span><i class="fas fa-lock"></i></span>
+                            <span class="proyecto-link" style="cursor: default; border-color: var(--gray); color: var(--text-muted);"><span>Interno</span><i class="fas fa-lock"></i></span>
                         </div>
                     </div>
                 </article>
@@ -1603,7 +1762,6 @@
                 <article class="proyecto-card animate-on-scroll">
                     <div class="proyecto-image-section">
                         <div class="proyecto-image-container">
-                            <!-- REEMPLAZA CON: <img src="dinosaurios.png" alt="Dinosaurios del Equipo"> -->
                             <div class="image-placeholder">
                                 <i class="fas fa-image"></i>
                                 <span>dinosaurios.png</span>
@@ -1636,7 +1794,7 @@
                                 <span class="tag">Diseño</span>
                                 <span class="tag">Cultura</span>
                             </div>
-                            <span class="proyecto-link" style="cursor: default; border-color: var(--gray);"><span>Físico</span><i class="fas fa-hand-holding-heart"></i></span>
+                            <span class="proyecto-link" style="cursor: default; border-color: var(--gray); color: var(--text-muted);"><span>Físico</span><i class="fas fa-hand-holding-heart"></i></span>
                         </div>
                     </div>
                 </article>
@@ -1649,41 +1807,41 @@
     <section class="section habilidades" id="habilidades">
         <div class="container">
             <div class="section-header animate-on-scroll">
-                <span class="section-badge"><i class="fas fa-star"></i> Habilidades</span>
-                <h2 class="section-title">Lo que estos proyectos <span>reflejan</span></h2>
-                <p class="section-subtitle">Competencias desarrolladas a través de la creación de cada herramienta</p>
+                <span class="section-badge"><i class="fas fa-star"></i> Aprendizajes</span>
+                <h2 class="section-title">Lo que He <span>Desarrollado</span></h2>
+                <p class="section-subtitle">Competencias que fui construyendo a través de cada iniciativa</p>
             </div>
             
             <div class="habilidades-grid">
                 <div class="habilidad-card animate-on-scroll animate-delay-1">
                     <div class="habilidad-icon"><i class="fas fa-brain"></i></div>
                     <h3>Pensamiento Analítico</h3>
-                    <p>Dashboards que transforman datos en decisiones accionables. Capacidad de identificar patrones y generar insights que agregan valor.</p>
+                    <p>Aprendí a transformar datos en información útil. Cada dashboard nació de preguntarme: ¿qué necesitamos ver para tomar mejores decisiones?</p>
                 </div>
                 <div class="habilidad-card animate-on-scroll animate-delay-2">
                     <div class="habilidad-icon"><i class="fas fa-lightbulb"></i></div>
                     <h3>Innovación con Propósito</h3>
-                    <p>Cada proyecto nació de una necesidad real detectada y validada con el equipo. Soluciones que resuelven oportunidades concretas.</p>
+                    <p>Cada proyecto nació de una necesidad real detectada y validada con el equipo. No se trata de crear por crear, sino de resolver oportunidades concretas.</p>
                 </div>
                 <div class="habilidad-card animate-on-scroll animate-delay-3">
                     <div class="habilidad-icon"><i class="fas fa-users"></i></div>
-                    <h3>Impacto Colaborativo</h3>
-                    <p>Herramientas que compañeros usan voluntariamente porque les generan valor. Influencia a través de soluciones útiles.</p>
+                    <h3>Orientación al Equipo</h3>
+                    <p>Todo lo que construí fue pensando en cómo hacer más fácil el día a día de mis compañeros. El equipo es el centro de cada decisión.</p>
                 </div>
                 <div class="habilidad-card animate-on-scroll animate-delay-4">
-                    <div class="habilidad-icon"><i class="fas fa-code"></i></div>
-                    <h3>Desarrollo Técnico</h3>
-                    <p>Google Apps Script, Chrome Extensions, HTML/CSS/JS, integración con APIs. Aprendizaje continuo aplicado a crear valor.</p>
+                    <div class="habilidad-icon"><i class="fas fa-robot"></i></div>
+                    <h3>IA como Aliada</h3>
+                    <p>Aprendí a usar MeLi GPT, Claude (Opus 4.5 y Sonnet 4.5) y ChatGPT 5/5.2 como herramientas para construir soluciones que solo no hubiera podido crear.</p>
                 </div>
                 <div class="habilidad-card animate-on-scroll animate-delay-5">
-                    <div class="habilidad-icon"><i class="fas fa-robot"></i></div>
-                    <h3>IA como Herramienta</h3>
-                    <p>Uso de Gemini para personalizar reconocimientos y potenciar la creación. Inteligencia artificial aplicada a necesidades reales.</p>
+                    <div class="habilidad-icon"><i class="fas fa-code"></i></div>
+                    <h3>Aprendizaje Autodidacta</h3>
+                    <p>Sin ser programador, dediqué muchas horas a aprender Google Apps Script, HTML, CSS y JavaScript. La curiosidad y la persistencia fueron mis mejores maestros.</p>
                 </div>
                 <div class="habilidad-card animate-on-scroll animate-delay-1">
                     <div class="habilidad-icon"><i class="fas fa-heart"></i></div>
                     <h3>Cultura como Prioridad</h3>
-                    <p>Cada proyecto refuerza los principios de MercadoLibre. La tecnología al servicio de las personas y la cultura.</p>
+                    <p>Cada proyecto refuerza los principios de MercadoLibre. Creo que la tecnología debe estar al servicio de las personas y la cultura.</p>
                 </div>
             </div>
         </div>
@@ -1692,10 +1850,10 @@
     <!-- ============ FOOTER ============ -->
     <footer class="footer">
         <div class="footer-content">
-            <div class="footer-logo">🚀</div>
+            <div class="footer-logo">💛</div>
             <p class="footer-text">Juan Sebastián Guerrero Rodríguez</p>
-            <p class="footer-text">Representante del equipo Publicaciones Mature</p>
-            <p class="footer-quote">"La innovación nace de ver oportunidades donde otros ven el día a día"</p>
+            <p class="footer-text">Semi-Senior · Equipo Publicaciones Mature</p>
+            <p class="footer-quote">"El equipo es primero"</p>
             <p class="footer-year">2025</p>
         </div>
     </footer>
@@ -1747,3 +1905,4 @@
 
 </body>
 </html>
+
